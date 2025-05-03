@@ -1,26 +1,29 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        'imdb-yellow': '#F5C518',
-        'imdb-blue': '#5799EF',
-        'imdb-dark': '#121212',
-        'imdb-light': '#F5F5F5',
-        'imdb-gray': {
-          100: '#F5F5F5',
-          200: '#E5E5E5',
-          300: '#D4D4D4',
-          400: '#A3A3A3',
-          500: '#737373',
-          600: '#525252',
-          700: '#404040',
-          800: '#262626',
-          900: '#171717',
-        },
+        'imdb': {
+          'yellow': '#F5C518',
+          'blue': '#5799EF',
+          'dark': '#121212',
+          'light': '#F5F5F5',
+          'gray': {
+            100: '#F5F5F5',
+            200: '#E5E5E5',
+            300: '#D4D4D4',
+            400: '#A3A3A3',
+            500: '#737373',
+            600: '#525252',
+            700: '#404040',
+            800: '#262626',
+            900: '#171717',
+          }
+        }
       },
       fontFamily: {
         sans: ['Amazon Ember', 'Helvetica Neue', 'Arial', 'sans-serif'],
@@ -41,6 +44,17 @@ module.exports = {
       },
       borderRadius: {
         'imdb': '4px',
+      },
+      keyframes: {
+        shimmer: {
+          '100%': { transform: 'translateX(100%)' },
+        },
+      },
+      animation: {
+        shimmer: 'shimmer 1.5s infinite',
+      },
+      backdropBlur: {
+        xs: '2px',
       },
     },
   },
